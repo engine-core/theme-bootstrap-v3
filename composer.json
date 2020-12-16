@@ -7,7 +7,7 @@
       "email": "e-kevin@qq.com"
     }
   ],
-  "type": "ec-extensions",
+  "type": "ec-extension",
   "license": "BSD-3-Clause",
   "homepage": "https://github.com/engine-core/theme-bootstrap-v3",
   "require": {

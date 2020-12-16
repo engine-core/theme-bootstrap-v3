@@ -6,11 +6,10 @@
  */
 
 /* @var $this \yii\web\View */
-
 /* @var $content string */
 
 use EngineCore\Ec;
-use EngineCore\extension\ExtensionInfo;
+use EngineCore\extension\repository\info\ExtensionInfo;
 use EngineCore\themes\BootstrapV3\assetBundle\SiteAsset;
 use EngineCore\themes\BootstrapV3\widgets\Nav;
 use yii\helpers\Html;
@@ -77,7 +76,7 @@ SiteAsset::register($this);
     ]);
     // 右侧菜单
     $rightMenuItems = [];
-    if (Ec::$service->getExtension()->getDb()->hasExtensionByCategory(ExtensionInfo::CATEGORY_PASSPORT)) {
+    if (Ec::$service->getExtension()->getRepository()->existsByCategory(ExtensionInfo::CATEGORY_PASSPORT)) {
         if (Yii::$app->user->isGuest) {
             $rightMenuItems[] = ['label' => 'Signup', 'url' => ['/passport/common/signup']];
             $rightMenuItems[] = ['label' => 'Login', 'url' => ['/passport/common/login']];
